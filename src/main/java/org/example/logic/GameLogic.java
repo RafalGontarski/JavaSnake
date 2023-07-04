@@ -1,5 +1,6 @@
-package org.example;
+package org.example.logic;
 
+import org.example.model.Apple;
 import org.example.model.Snake;
 
 public class GameLogic {
