@@ -4,8 +4,7 @@ import org.example.logic.GameLogic;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 
 public class GameFrame extends JFrame {
     private GameLogic gameLogic;
@@ -24,6 +23,24 @@ public class GameFrame extends JFrame {
                     gameLogic.checkApple();
                     gameLogic.checkCollision();
                     gameLogic.move();
+                }
+                repaint();
+            }
+        });
+
+        addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e) {
+                int key = e.getKeyCode();
+
+                if (key == KeyEvent.VK_LEFT) {
+                    gameLogic.getSnake().setDirection(new Point(-GameLogic.SIZE, 0));
+                } else if (key == KeyEvent.VK_RIGHT) {
+                    gameLogic.getSnake().setDirection(new Point(GameLogic.SIZE, 0));
+                } else if (key == KeyEvent.VK_UP) {
+                    gameLogic.getSnake().setDirection(new Point(0, -GameLogic.SIZE));
+                } else if (key == KeyEvent.VK_DOWN) {
+                    gameLogic.getSnake().setDirection(new Point(0, GameLogic.SIZE));
                 }
             }
         });
