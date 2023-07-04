@@ -1,5 +1,15 @@
 package org.example;
 
 public class GameLogic {
+    public static final int SIZE = 10;
+    public static final int WIDTH = 300;
+    public static final int HEIGHT = 300;
 
+    private Snake snake;
+    private Apple apple;
+
+    public GameLogic() {
+        snake = new Snake();
+        apple = new Apple(WIDTH, HEIGHT, SIZE);
+    }
 }
