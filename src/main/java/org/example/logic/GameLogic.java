@@ -30,6 +30,8 @@ public class GameLogic {
     }
 
     public void checkApple() {
-        if (snake.getHead())
+        if (snake.getHead().equals(apple.getPosition())) {
+            snake.grow();
+        }
     }
 }
