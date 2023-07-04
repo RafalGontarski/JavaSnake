@@ -1,5 +1,7 @@
 package org.example;
 
+import org.example.model.Snake;
+
 public class GameLogic {
     public static final int SIZE = 10;
     public static final int WIDTH = 300;
