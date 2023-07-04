@@ -10,6 +10,7 @@ public class Main {
             @Override
             public void run() {
                 JFrame ex = new GameFrame();
+                ex.setVisible(true);
             }
         });
     }
