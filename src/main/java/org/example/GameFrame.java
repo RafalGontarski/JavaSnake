@@ -22,6 +22,7 @@ public class GameFrame extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 if (gameLogic.isInGame()) {
                     gameLogic.checkApple();
+                    gameLogic.checkCollision();
                 }
             }
         });
