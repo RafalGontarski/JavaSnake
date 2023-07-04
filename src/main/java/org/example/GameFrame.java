@@ -23,6 +23,7 @@ public class GameFrame extends JFrame {
                 if (gameLogic.isInGame()) {
                     gameLogic.checkApple();
                     gameLogic.checkCollision();
+                    gameLogic.move();
                 }
             }
         });
