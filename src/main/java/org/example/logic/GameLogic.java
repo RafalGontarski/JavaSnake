@@ -47,4 +47,8 @@ public class GameLogic {
     private boolean isWithinBounds(Point p) {
         return p.x >= 0 && p.x < WIDTH && p.y >= 0 && p.y < HEIGHT;
     }
+
+    public void move() {
+        snake.move();
+    }
 }
