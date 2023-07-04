@@ -31,4 +31,13 @@ public class Snake {
         // Add a new point in the same location as the last segment
         body.addFirst(new Point(body.getLast()));
     }
+
+    public boolean collidesWithItself() {
+        for (int i = 1; i < body.size(); i++) {
+            if (getHead().equals(body.get(i))) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
