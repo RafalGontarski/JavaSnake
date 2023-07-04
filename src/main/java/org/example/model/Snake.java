@@ -22,4 +22,8 @@ public class Snake {
     public LinkedList<Point> getBody() {
         return body;
     }
+
+    public Point getHead() {
+        return body.getFirst();
+    }
 }
