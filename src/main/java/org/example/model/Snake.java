@@ -1,5 +1,7 @@
 package org.example.model;
 
+import org.example.logic.GameLogic;
+
 import java.awt.*;
 import java.util.LinkedList;
 
@@ -26,7 +28,20 @@ public class Snake {
 
     public void move() {
         // Move the snake by adding a new head and removing the last segment
-        body.addFirst(new Point(body.getFirst().x + direction.x, body.getFirst().y + direction.y));
+        int x = (body.getFirst().x + direction.x);
+        int y = (body.getFirst().y + direction.y);
+        if (x >= GameLogic.WIDTH) {
+            x = 0;
+        } else if (x < 0) {
+            x = GameLogic.WIDTH - GameLogic.SIZE;
+        }
+        if (y >= GameLogic.HEIGHT) {
+            y = 0;
+        } else if (y < 0) {
+            y = GameLogic.HEIGHT - GameLogic.SIZE;
+        }
+
+        body.addFirst(new Point(x, y));
         body.removeLast();
     }
 
