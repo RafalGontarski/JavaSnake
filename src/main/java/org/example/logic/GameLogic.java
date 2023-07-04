@@ -28,4 +28,8 @@ public class GameLogic {
     public boolean isInGame() {
         return inGame;
     }
+
+    public void checkApple() {
+        if (snake.getHead())
+    }
 }
