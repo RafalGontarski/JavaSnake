@@ -39,7 +39,9 @@ public class GameFrame extends JFrame {
             public void keyPressed(KeyEvent e) {
                 int key = e.getKeyCode();
 
-                if (key == KeyEvent.VK_LEFT) {
+                if (!gameLogic.isInGame() && key == KeyEvent.VK_SPACE) {
+                    gameLogic.resetGame();
+                } else if (key == KeyEvent.VK_LEFT) {
                     gameLogic.getSnake().setDirection(new Point(-GameLogic.SIZE, 0));
                 } else if (key == KeyEvent.VK_RIGHT) {
                     gameLogic.getSnake().setDirection(new Point(GameLogic.SIZE, 0));
@@ -50,6 +52,7 @@ public class GameFrame extends JFrame {
                 }
             }
         });
+
 
         gamePanel = new JPanel() {
             @Override

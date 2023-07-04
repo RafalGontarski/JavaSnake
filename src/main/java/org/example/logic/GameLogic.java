@@ -43,6 +43,14 @@ public class GameLogic {
         snake.move();
     }
 
+    public void resetGame() {
+        snake = new Snake();
+        apple.newPosition();
+        score = 0;
+        inGame = true;
+    }
+
+
     public Snake getSnake() {
         return snake;
     }
