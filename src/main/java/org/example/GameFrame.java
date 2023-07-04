@@ -44,5 +44,17 @@ public class GameFrame extends JFrame {
                 }
             }
         });
+
+        setBackground(Color.BLACK);
+        setFocusable(true);
+
+        setPreferredSize(new Dimension(GameLogic.WIDTH, GameLogic.HEIGHT));
+        pack();
+
+        setTitle("Java Snake");
+        setLocationRelativeTo(null);
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+
+        timer.start();
     }
 }
