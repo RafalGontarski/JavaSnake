@@ -23,7 +23,7 @@ public class Snake {
 
     public void grow() {
         // Add a new point in the same location as the last segment
-        body.addFirst(new Point(body.getLast()));
+        body.addLast(new Point(body.getLast()));
     }
 
     public void move() {
