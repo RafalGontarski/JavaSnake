@@ -35,4 +35,8 @@ public class GameLogic {
             apple.newPosition();
         }
     }
+
+    public void checkCollision() {
+        if (snake.collidesWithItself())
+    }
 }
