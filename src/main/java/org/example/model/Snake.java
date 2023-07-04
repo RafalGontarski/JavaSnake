@@ -26,4 +26,9 @@ public class Snake {
     public Point getHead() {
         return body.getFirst();
     }
+
+    public void grow() {
+        // Add a new point in the same location as the last segment
+        body.addFirst(new Point(body.getLast()));
+    }
 }
