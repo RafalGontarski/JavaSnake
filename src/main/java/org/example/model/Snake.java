@@ -40,4 +40,10 @@ public class Snake {
         }
         return false;
     }
+
+    public void move() {
+        // Move the snake by adding a new head and removing the last segment
+        body.addFirst(new Point(body.getFirst().x + direction.x, body.getFirst().y + direction.y));
+        body.removeLast();
+    }
 }
