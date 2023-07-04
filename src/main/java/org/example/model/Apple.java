@@ -14,6 +14,8 @@ public class Apple {
         this.width = width;
         this.height = height;
         this.size = size;
+        position = new Point(0, 0);
+        newPosition();
     }
 
     public Point getPosition() {
