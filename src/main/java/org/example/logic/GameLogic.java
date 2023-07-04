@@ -19,18 +19,6 @@ public class GameLogic {
         apple = new Apple(WIDTH, HEIGHT, SIZE);
     }
 
-    public Snake getSnake() {
-        return snake;
-    }
-
-    public Apple getApple() {
-        return apple;
-    }
-
-    public boolean isInGame() {
-        return inGame;
-    }
-
     public void checkApple() {
         if (snake.getHead().equals(apple.getPosition())) {
             snake.grow();
@@ -50,5 +38,17 @@ public class GameLogic {
 
     public void move() {
         snake.move();
+    }
+
+    public Snake getSnake() {
+        return snake;
+    }
+
+    public Apple getApple() {
+        return apple;
+    }
+
+    public boolean isInGame() {
+        return inGame;
     }
 }

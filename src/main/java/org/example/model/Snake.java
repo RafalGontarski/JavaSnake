@@ -12,24 +12,22 @@ public class Snake {
         body.add(new Point(50,50));
         body.add(new Point(40,50));
         body.add(new Point(30,50));
-        direction = new Point(0, 0);
+        direction = new Point(10, 0);
     }
 
     public void setDirection(Point direction) {
         this.direction = direction;
     }
 
-    public LinkedList<Point> getBody() {
-        return body;
-    }
-
-    public Point getHead() {
-        return body.getFirst();
-    }
-
     public void grow() {
         // Add a new point in the same location as the last segment
         body.addFirst(new Point(body.getLast()));
+    }
+
+    public void move() {
+        // Move the snake by adding a new head and removing the last segment
+        body.addFirst(new Point(body.getFirst().x + direction.x, body.getFirst().y + direction.y));
+        body.removeLast();
     }
 
     public boolean collidesWithItself() {
@@ -41,9 +39,11 @@ public class Snake {
         return false;
     }
 
-    public void move() {
-        // Move the snake by adding a new head and removing the last segment
-        body.addFirst(new Point(body.getFirst().x + direction.x, body.getFirst().y + direction.y));
-        body.removeLast();
+    public LinkedList<Point> getBody() {
+        return body;
+    }
+
+    public Point getHead() {
+        return body.getFirst();
     }
 }
