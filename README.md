@@ -2,6 +2,11 @@
 
 This repository contains the source code for the classic Snake game implemented in Java. This implementation provides a simple and clean GUI and user-friendly controls to navigate the snake.
 
+
+
+https://github.com/RafalGontarski/JavaSnake/assets/106514250/70c6e036-2f1b-4a98-b258-80a8e81c56b3
+
+
 ## Game Features
 - Smooth and responsive controls.
 - The snake grows in size as it eats the apple.
