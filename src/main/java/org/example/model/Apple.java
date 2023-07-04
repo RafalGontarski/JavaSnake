@@ -19,4 +19,12 @@ public class Apple {
     public Point getPosition() {
         return position;
     }
+
+    public void newPosition() {
+        int r = random.nextInt(width / size);
+        position.x = ((r * size));
+
+        r = random.nextInt(height / size);
+        position.y = ((r * size));
+    }
 }
