@@ -12,17 +12,20 @@ public class GameLogic {
 
     private Snake snake;
     private Apple apple;
+    private static int score;
     private boolean inGame = true;
 
     public GameLogic() {
         snake = new Snake();
         apple = new Apple(WIDTH, HEIGHT, SIZE);
+        score = 0;
     }
 
     public void checkApple() {
         if (snake.getHead().equals(apple.getPosition())) {
             snake.grow();
             apple.newPosition();
+            score += 10;
         }
     }
 
@@ -50,5 +53,9 @@ public class GameLogic {
 
     public boolean isInGame() {
         return inGame;
+    }
+
+    public static int getScore() {
+        return score;
     }
 }

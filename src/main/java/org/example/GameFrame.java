@@ -55,6 +55,12 @@ public class GameFrame extends JFrame {
             @Override
             public void paintComponent(Graphics g) {
                 super.paintComponent(g);
+
+                // Displaying points
+                String scoreText = "Score: " + GameLogic.getScore();
+                g.setColor(Color.BLACK);
+                g.drawString(scoreText, 10, GameLogic.HEIGHT - 10);
+
                 if (gameLogic.isInGame()) {
                     g.setColor(Color.RED);
                     Point applePos = gameLogic.getApple().getPosition();
@@ -70,15 +76,18 @@ public class GameFrame extends JFrame {
                         Point pos = snakeBody.get(z);
                         g.fillRect(pos.x, pos.y, GameLogic.SIZE, GameLogic.SIZE);
                     }
-                } else {
+                }
+                if (!gameLogic.isInGame()) {
                     String msg = "Game Over";
                     Font font = new Font("SAN_SERIF", Font.BOLD, 14);
                     FontMetrics metrics = getFontMetrics(font);
 
-                    g.setColor(Color.WHITE);
+                    g.setColor(Color.BLACK);
                     g.setFont(font);
                     g.drawString(msg, (GameLogic.WIDTH - metrics.stringWidth(msg)) / 2, GameLogic.HEIGHT / 2);
                 }
+
+
             }
         };
         gamePanel.setPreferredSize(new Dimension(GameLogic.WIDTH, GameLogic.HEIGHT));
