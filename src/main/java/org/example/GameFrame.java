@@ -105,5 +105,13 @@ public class GameFrame extends JFrame {
 
         timer.start();
     }
+
+    public GameLogic getGameLogic() {
+        return gameLogic;
+    }
+
+    public Timer getTimer() {
+        return timer;
+    }
 }
 
