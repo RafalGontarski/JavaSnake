@@ -7,9 +7,22 @@ public class GameLogic {
 
     private Snake snake;
     private Apple apple;
+    private boolean inGame = true;
 
     public GameLogic() {
         snake = new Snake();
         apple = new Apple(WIDTH, HEIGHT, SIZE);
+    }
+
+    public Snake getSnake() {
+        return snake;
+    }
+
+    public Apple getApple() {
+        return apple;
+    }
+
+    public boolean isInGame() {
+        return inGame;
     }
 }
