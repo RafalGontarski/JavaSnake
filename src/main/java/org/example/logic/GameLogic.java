@@ -27,7 +27,7 @@ public class GameLogic {
     }
 
     public void checkCollision() {
-        if (snake.collidesWithItself() || !isWithinBounds(snake.getHead())) {
+        if (snake.collidesWithItself()) {
             inGame = false;
         }
     }
